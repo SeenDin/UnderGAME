@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://7ctm4828y5ul"]
+
+[ext_resource type="Texture2D" uid="uid://b8u82omhj1t15" path="res://Sprite Object/Автомат с напитками.svg" id="1_u0l2f"]
+[ext_resource type="Script" uid="uid://bw8npbxkjuwgq" path="res://Interactive Object/coin_machine.gd" id="2_t7rtp"]
+[ext_resource type="AudioStream" uid="uid://dx3i3csib1np1" path="res://music/throw a coin into a machine.mp3" id="3_sj6lb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61ms4"]
+size = Vector2(24.8756, 30.8955)
+
+[node name="CoinMachine" type="Node2D"]
+script = ExtResource("2_t7rtp")
+
+[node name="АвтоматСНапитками" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 15)
+texture = ExtResource("1_u0l2f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(9, 15)
+stream = ExtResource("3_sj6lb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 15.475)
+scale = Vector2(1.005, 1.005)
+shape = SubResource("RectangleShape2D_61ms4")
+script = ExtResource("2_t7rtp")

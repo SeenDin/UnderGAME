@@ -1,30 +1,144 @@
-[gd_scene load_steps=5 format=3 uid="uid://kf77ko4nu4th"]
+[gd_scene load_steps=11 format=3 uid="uid://kf77ko4nu4th"]
 
 [ext_resource type="PackedScene" uid="uid://cf4lt22se6gtt" path="res://Person/Person.tscn" id="1_7vw07"]
 [ext_resource type="PackedScene" uid="uid://cqm664i2yah45" path="res://Interactive Object/Portal.tscn" id="2_cd2k1"]
 [ext_resource type="Texture2D" uid="uid://bfennkaya017r" path="res://Sprite Object/Sprite-0001.png" id="3_r7qem"]
+[ext_resource type="Texture2D" uid="uid://b5a0n664sogwq" path="res://Sprite Object/дерево-ель.svg" id="4_4jtfw"]
+[ext_resource type="Texture2D" uid="uid://d4fu1nq547yfc" path="res://Sprite Object/стол с предметами.png" id="5_yqe22"]
+[ext_resource type="Texture2D" uid="uid://b8u82omhj1t15" path="res://Sprite Object/Автомат с напитками.svg" id="6_6kx34"]
+[ext_resource type="Texture2D" uid="uid://d5w05ro8kelo" path="res://Sprite Object/Дверь деревянная.png" id="7_apqp6"]
+[ext_resource type="PackedScene" uid="uid://7ctm4828y5ul" path="res://Interactive Object/coin machine.tscn" id="8_yqe22"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r7qem"]
+resource_local_to_scene = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
-size = Vector2(1170, 20)
+size = Vector2(1170, 60)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_7vw07")]
+z_index = 100
+z_as_relative = false
 position = Vector2(368, 194)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 863.0
+offset_top = 107.0
+offset_right = 1167.0
+offset_bottom = 228.0
+rotation = -0.00223585
+color = Color(0.157945, 0.0835875, 0.0263987, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = -16.0
+offset_right = 1.0
+offset_bottom = 64.0
+rotation = -0.00223585
+color = Color(0.214043, 0.117959, 0.0359586, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-6.10352e-05, -3.05176e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(581.998, 237)
+material = SubResource("CanvasItemMaterial_r7qem")
+position = Vector2(581.998, 257)
 shape = SubResource("RectangleShape2D_wtcfe")
 
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D"]
+z_index = 205
+clip_contents = true
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -584.0
+offset_top = -30.0
+offset_right = 585.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
 [node name="Area2D" parent="." instance=ExtResource("2_cd2k1")]
+z_index = 1
 position = Vector2(1137, 210)
 target_scene = "res://Worlds/World 1.tscn"
 
 [node name="Sprite-0001" type="Sprite2D" parent="."]
 show_behind_parent = true
+z_index = 1
 texture_filter = 1
 position = Vector2(1112, 210)
 texture = ExtResource("3_r7qem")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Дерево-ель5" type="Sprite2D" parent="Node"]
+z_index = 103
+texture_filter = 1
+position = Vector2(299.538, 194.823)
+scale = Vector2(2.39902, 2.61391)
+texture = ExtResource("4_4jtfw")
+
+[node name="Дерево-ель3" type="Sprite2D" parent="Node"]
+z_index = 102
+texture_filter = 1
+position = Vector2(605, 193)
+scale = Vector2(2.25977, 2.67773)
+texture = ExtResource("4_4jtfw")
+
+[node name="Дерево-ель" type="Sprite2D" parent="Node"]
+z_index = -35
+texture_filter = 1
+position = Vector2(832, 191)
+scale = Vector2(2.125, 2.8125)
+texture = ExtResource("4_4jtfw")
+
+[node name="Дерево-ель2" type="Sprite2D" parent="Node"]
+z_index = -35
+texture_filter = 1
+position = Vector2(728, 193)
+scale = Vector2(2.125, 2.75)
+texture = ExtResource("4_4jtfw")
+
+[node name="Дерево-ель4" type="Sprite2D" parent="Node"]
+z_index = -35
+texture_filter = 1
+position = Vector2(472, 193)
+scale = Vector2(2.2801, 2.63847)
+texture = ExtResource("4_4jtfw")
+
+[node name="Дерево-ель6" type="Sprite2D" parent="Node"]
+z_index = -35
+texture_filter = 1
+position = Vector2(128, 195)
+scale = Vector2(2.42063, 2.57558)
+texture = ExtResource("4_4jtfw")
+
+[node name="СтолСПредметами" type="Sprite2D" parent="Node"]
+texture_filter = 1
+position = Vector2(1046, 215)
+scale = Vector2(2.96289, 2.04883)
+texture = ExtResource("5_yqe22")
+
+[node name="АвтоматСНапитками" type="Sprite2D" parent="Node"]
+modulate = Color(0.829176, 0.688846, 0.700307, 1)
+texture_filter = 1
+position = Vector2(963, 204)
+scale = Vector2(1.47876, 1.46118)
+texture = ExtResource("6_6kx34")
+
+[node name="ДверьДеревянная" type="Sprite2D" parent="Node"]
+texture_filter = 1
+position = Vector2(856.288, 199)
+rotation = -3.14159
+scale = Vector2(0.999691, -2.02934)
+texture = ExtResource("7_apqp6")
+
+[node name="CoinMachine" parent="." instance=ExtResource("8_yqe22")]
+position = Vector2(981, 184)
+scale = Vector2(1.43549, 1.39546)

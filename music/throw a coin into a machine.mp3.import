@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dx3i3csib1np1"
+path="res://.godot/imported/throw a coin into a machine.mp3-10a33fdbfdb358a43903dd1b3c1a82bc.mp3str"
+
+[deps]
+
+source_file="res://music/throw a coin into a machine.mp3"
+dest_files=["res://.godot/imported/throw a coin into a machine.mp3-10a33fdbfdb358a43903dd1b3c1a82bc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
