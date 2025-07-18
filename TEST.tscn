@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d4fu1nq547yfc" path="res://Sprite Object/стол с предметами.png" id="5_yqe22"]
 [ext_resource type="Texture2D" uid="uid://b8u82omhj1t15" path="res://Sprite Object/Автомат с напитками.svg" id="6_6kx34"]
 [ext_resource type="Texture2D" uid="uid://d5w05ro8kelo" path="res://Sprite Object/Дверь деревянная.png" id="7_apqp6"]
-[ext_resource type="PackedScene" uid="uid://7ctm4828y5ul" path="res://Interactive Object/coin machine.tscn" id="8_yqe22"]
+[ext_resource type="PackedScene" uid="uid://bqbmcampjjlrl" path="res://Interactive Object/Coin Machine.tscn" id="8_yqe22"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r7qem"]
 resource_local_to_scene = true
@@ -62,11 +62,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
-
-[node name="Area2D" parent="." instance=ExtResource("2_cd2k1")]
-z_index = 1
-position = Vector2(1137, 210)
-target_scene = "res://Worlds/World 1.tscn"
 
 [node name="Sprite-0001" type="Sprite2D" parent="."]
 show_behind_parent = true
@@ -139,6 +134,11 @@ rotation = -3.14159
 scale = Vector2(0.999691, -2.02934)
 texture = ExtResource("7_apqp6")
 
-[node name="CoinMachine" parent="." instance=ExtResource("8_yqe22")]
-position = Vector2(981, 184)
-scale = Vector2(1.43549, 1.39546)
+[node name="Portal" parent="." instance=ExtResource("2_cd2k1")]
+position = Vector2(1152, 211)
+target_scene = "res://Worlds/World 1.tscn"
+
+[node name="Coin Machine" parent="." instance=ExtResource("8_yqe22")]
+top_level = true
+position = Vector2(988, 204)
+scale = Vector2(1.45, 1.45)
